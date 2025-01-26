@@ -12,6 +12,12 @@
 - Docker
 
 ## How to Deploy & Run
+First clone this repo using the following command: 
+```bash
+git clone --recurse-submodules https://github.com/thisisishara/plex_deployment.git
+```
+This will clone the frontend and backend projects required for the deployment which have been added to this repo as git submodules.
+
 Please make sure to create `.env` files in the `frontend` and `backend` directories as specified in the `README.md` files in those directories.
 
 ### ⚠️ Important
