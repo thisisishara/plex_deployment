@@ -1,0 +1,32 @@
+services:
+  plexapp:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: plexapp
+    container_name: plexapp
+    networks: [plex-network]
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - "./frontend/.env"
+    depends_on:
+      - plexapi
+  
+  plexapi:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: plexapi
+    container_name: plexapi
+    networks: [plex-network]
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - "./backend/.env"
+
+networks:
+  plex-network:
+    driver: bridge
