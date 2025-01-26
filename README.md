@@ -11,6 +11,11 @@
 - Sanic
 - Docker
 
+## Links
+[Backend Repository](https://github.com/thisisishara/plex_backend)
+[Frontend Repository](https://github.com/thisisishara/plex_frontend)
+[Deployment Repository](https://github.com/thisisishara/plex_deployment)
+
 ## How to Deploy & Run
 First clone this repo using the following command: 
 ```bash
