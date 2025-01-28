@@ -23,10 +23,10 @@ git clone --recurse-submodules https://github.com/thisisishara/plex_deployment.g
 ```
 This will clone the frontend and backend projects required for the deployment which have been added to this repo as git submodules.
 
-Please make sure to create `.env` files in the `frontend` and `backend` directories as specified in the `README.md` files in those directories.
+Please make sure to create the `.env` file in the `backend` directory as specified in the `README.md` file in the backend directory.
 
 ### ⚠️ Important
-- Make sure the backend port is the same in both frontend and backend .env files
+- Make sure the backend port is the same in both services in the docker compose file.
 - Make sure to add a valid `mongodb connection URL` in the backend .env file. You can create a new Atlas cluster for free [here](https://www.mongodb.com/cloud/atlas/register). The connection string should look similar to `mongodb+srv://<username>:<password>@<cluster>.mongodb.net`.
 - Make sure to add a valid `deepseek API Key` in the backend .env file. You can obtain after registering on [deepseek platform](https://platform.deepseek.com/sign_in). After registration is done, visit [here](https://platform.deepseek.com/api_keys).
 - Without above configurations, the services will not work as expected.
@@ -36,8 +36,8 @@ After the .env files are configured within frontend and backend directories, you
 The frontend and backend directories also have dedicated `README.md` files explaining how to create and configure the .env files for each service.
 
 ## How to use the Frontend
-### TL;DR
-1. **Access**: Visit `http://localhost:3000` (or custom port).
+### TL;DR - Docker
+1. **Access**: Visit `http://localhost:3001` (or custom port).
 2. **Upload**: Upload **one PDF at a time**; duplicates are detected.
 3. **Select**: Choose a report and the **latest quarter** for P&L extraction.
 4. **Extraction**: Toggle to extract only key P&L elements.
@@ -51,7 +51,7 @@ The frontend and backend directories also have dedicated `README.md` files expla
 ### Explanation
 Once the services are up and running, you can access the frontend using a browser. A newer browser is recommended for better UX.
 
-Visit `http://localhost:3000` (replace the port if you configured a different port for the frontend) to load the `Financial Statement Analyzer` frontend app.
+Visit `http://localhost:3001` (replace the port if you configured a different port for the frontend) to load the `Financial Statement Analyzer` frontend app.
 
 1. **Uploading Financial Statements**  
 You can use the file upload input on the top of the app to select desired financial statements to be analyzed to extract Profit and Loass statements from them.
